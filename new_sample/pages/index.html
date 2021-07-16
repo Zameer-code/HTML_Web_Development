@@ -64,27 +64,38 @@
                 else textError.textContent = "Name is Incorrect";
             });
             
-     const email = document.querySelector('#email');
-        const emailError = document.querySelector('.email-error');
-        email.addEventListener('blur', function () {
-            let emailRegex = RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$");
-            if (emailRegex.test(email.value)) {
+            const email = document.querySelector('#email');
+            const emailError = document.querySelector('.email-error');
+            email.addEventListener('blur', function () {
+                let emailRegex = RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$");
+                if (emailRegex.test(email.value)) {
                 emailError.textContent = "";
-            } else {
+                } else {
                 emailError.textContent = "email is incorrect";
             }
-        });
+            });
 
-        const tel = document.querySelector('#tel');
-        const telError = document.querySelector('.tel-error');
-        tel.addEventListener('blur', function () {
-            let telRegex = RegExp('^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$');
-            if (telRegex.test(tel.value)) {
+            const tel = document.querySelector('#tel');
+            const telError = document.querySelector('.tel-error');
+            tel.addEventListener('blur', function () {
+                let telRegex = RegExp('^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$');
+                if (telRegex.test(tel.value)) {
                 telError.textContent = "";
-            } else {
+                } else {
                 telError.textContent = "Phone number is incorrect";
             }
-        });
+            });
+
+            const pwd = document.querySelector('#pwd');
+            const pwdError = document.querySelector('.pwd-error');
+            pwd.addEventListener('blur', function () {
+                let pwdRegex = RegExp('^[a-zA-Z0-9!@#$%^&*]{8,}$');
+                if (pwdRegex.test(pwd.value)) {
+                pwdError.textContent = "";
+                } else {
+                pwdError.textContent = "Password is incorrect";
+            }
+            });
 
             const salary = document.querySelector('#salary');
             const output = document.querySelector('.salary-output');
