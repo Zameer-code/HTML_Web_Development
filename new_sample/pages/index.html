@@ -64,7 +64,7 @@
                 else textError.textContent = "Name is Incorrect";
             });
             
-             const email = document.querySelector('#email');
+     const email = document.querySelector('#email');
         const emailError = document.querySelector('.email-error');
         email.addEventListener('blur', function () {
             let emailRegex = RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$");
@@ -72,6 +72,17 @@
                 emailError.textContent = "";
             } else {
                 emailError.textContent = "email is incorrect";
+            }
+        });
+
+        const tel = document.querySelector('#tel');
+        const telError = document.querySelector('.tel-error');
+        tel.addEventListener('blur', function () {
+            let telRegex = RegExp('^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$');
+            if (telRegex.test(tel.value)) {
+                telError.textContent = "";
+            } else {
+                telError.textContent = "Phone number is incorrect";
             }
         });
 
